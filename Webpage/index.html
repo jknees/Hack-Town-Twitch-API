@@ -1,21 +1,24 @@
 <DOCTYPE! html>
+<html lang = "en">
 <head>
 <title>Best Twitch Streams</title>
 <style>
 * {margin:0px;padding:0px;}
 nav {
-	background-color: #262626;
+	background-color: #494949;
 	text-align: left;
 	font-size: 1.5em;
 	padding-top:0px;
 	padding-left: 5px;
 }
-a {
-	text-decoration: none;
-	color: #F1F1F1;
-}
 body {
 	background-color:#808080;
+}
+a {
+	text-decoration: none;
+}
+ul li a:visited {
+	color: #262626;
 }
 h1 {
 	font-size: 3em;
@@ -38,32 +41,93 @@ h1 {
 dd {
 	padding-left:40px;
 }
+object{
+	background-position: center;
+	padding: 20px;
+}
+ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: #D9D9D9;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+ul li:hover {
+  background: #555;
+  color: #fff;
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+ul li ul li:hover { background: #666; }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
 </style>
 </head>
 <body>
 	<h1>Best Twitch Streams</h1>
 		<nav>
-			<b>&nbsp &nbsp &nbsp &nbsp<a href="index.html">Home</a>&nbsp &nbsp &nbsp &nbsp <a href="listing.html">Listings</a>
-			</b>
+			<ul><li><a href = "index.html">Home</a></li>
+  				<li>
+    			Streams
+    				<ul>
+      					<li>Developers Choice</li>
+      					<li>Top Stream</li>
+    				</ul>
+  				</li>
+  				<li>Games
+					<ul>
+						<li>{Games}</li>
+					</ul>
+  				</li>
+			</ul>
 		</nav>
 		<br><br>
-	<div style="background-color: #F1F1F1; padding: 20px; margin:40px;">
-		<h2>Financing</h2>
-		<br>
-			<p>We work with many area mortgage and finance companies.</p>
-			<br>
-		<h3>Mortgage FAQs</h3>
-		<br>
-			<dt>What amount of mortgage do I qualify for?</dt>
-				<dd>The total basic monthly housing cost is normally based on 29% to 41% of your gross monthly income.</dd>
-				<br>
-			<dt>Which percentage is most often used?</dt>
-				<dd>The percentage used depends on the lending institution and type of financing.</dd>
-				<br>
-			<dt>How do I get started?</dt>
-				<dd>Contact us today to help you arrange financing for your home.</dd>
-	</div>
-	<div id="footer">
-		<i><small>Copyright &copy 2014 Prime Properties</small></i><br><a href="mailto:jknees@uoregon.edu" style="text-decoration: underline">jknees@uoregon.edu</a>
+	<div style="background-color: #F1F1F1; padding: 20px; margin:40px; position: center">
+		<iframe id="player" type="text/html" width="640" height="360"
+  		src="http://www.twitch.tv/{{channels}}/embed"
+  		frameborder="0"></iframe>
 	</div>
 </body>
+</html>
