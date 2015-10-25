@@ -8,7 +8,7 @@ nav {
 }
 body {
   background-color:#808080;
-  background-image: url("Pictures/Twitch-Banner.jpg");
+  background-image: url("../templates/Pictures/Twitch-Banner.jpg");
 }
 a {
   text-decoration: none;
@@ -30,7 +30,8 @@ h1 {
   padding-bottom: 20px;
   color: #F1F1F1;
   padding-left: 2.5em;
-  font-family: "Impact", "Charcoal", "sans-serif"
+  font-family: "Impact", "Charcoal", "sans-serif";
+  opacity: 0.97;
 }
 h2 {
   padding: 30px;
@@ -105,4 +106,8 @@ ul li:hover ul {
   display: block;
   opacity: 1;
   visibility: visible;
+}
+#block {
+  box-shadow: 16px 16px #262626;
+  opacity: 0.93;
 }
