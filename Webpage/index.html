@@ -1,0 +1,134 @@
+<DOCTYPE! html>
+<html lang = "en">
+<head>
+<title>Best Twitch Streams</title>
+<style>
+* {margin:0px;padding:0px;}
+nav {
+  background-color: #494949;
+  text-align: left;
+  font-size: 1.5em;
+  padding-top:0px;
+  padding-left: 5px;
+}
+body {
+  background-color:#808080;
+}
+a {
+  text-decoration: none;
+}
+ul li a:visited {
+  color: #262626;
+}
+h1 {
+  font-size: 3em;
+  background-color: #6441A5;
+  background-position:left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #F1F1F1;
+  padding-left: 2.5em;
+}
+h2 {
+  padding: 30px;
+}
+#footer {
+  position:relative;
+  margin-top: 100px;
+  clear: both;
+  background-color: #262626;
+  color:white;
+  height:40px;
+  padding:12px;
+}
+dd {
+  padding-left:40px;
+}
+object{
+  background-position: center;
+  padding: 20px;
+}
+ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+}
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: #D9D9D9;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+ul li:hover {
+  background: #555;
+  color: #fff;
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+ul li ul li:hover { background: #666; }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+</style>
+</head>
+<body>
+	<h1>Best Twitch Streams</h1>
+		<nav>
+			<ul><li><a href = "index.html">Home</a></li>
+  				<li>
+    			Streams
+    				<ul>
+      					<li>Developers Choice</li>
+      					<li>Top Stream</li>
+    				</ul>
+  				</li>
+  				<li>Games
+					<ul>
+						<li>{Games}</li>
+					</ul>
+  				</li>
+			</ul>
+		</nav>
+		<br><br>
+	<div style="background-color: #F1F1F1; padding: 20px; margin:60px;">
+    <h2>{{Stream}}</h2>
+		<center><iframe id="player" type="text/html" width="640" height="360"
+  		src="http://www.twitch.tv/{{channels}}/embed"
+  		frameborder="0"></iframe></center>
+	</div>
+</body>
+</html>

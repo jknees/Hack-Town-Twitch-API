@@ -1,18 +1,18 @@
 <DOCTYPE! html>
 <html lang = "en">
 <head>
-<title>Best Twitch Streams</title>
+<title>Games</title>
 <link type="text/css" rel="stylesheet" href="Twitch.css" />
 </head>
 <body>
-	<h1>Best Twitch Streams</h1>
+	<h1>Games</h1>
     <nav>
       <ul><li><a href = "index.html">Home</a></li>
           <li>
           Streams
             <ul>
                 <li><a href = "top_pick.html">Developers Choice</a></li>
-                <li><a href = "games.html" >Top Stream</a></li>
+                <li><a href = "top_stream.html" >Top Stream</a></li>
             </ul>
           </li>
           <li>Top Games
@@ -27,14 +27,6 @@
     </nav>
 		<br><br>
 	<div style="background-color: #F1F1F1; padding: 20px; margin:60px;">
-<<<<<<< HEAD
-    <h2>Welcome to our webpage</h2>
-    <center>
-<iframe id="ytplayer" type="text/html" width="720" height="405"
-src="https://www.youtube.com/embed/1Sqi-AvRiC8"
-frameborder="0" allowfullscreen>
-    </center>
-=======
     <h2>{{Stream}}</h2>
 		<center><object bgcolor="#000000" 
         data="//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf" 
@@ -53,12 +45,11 @@ frameborder="0" allowfullscreen>
   <param name="flashvars" 
           value="channel={{channel}}&auto_play=true&start_volume=50" />
 </object></center>
-  <br>
-  <div style="padding-left:20px">
-    <p><img src="{{picture}}" alt = "No Picture" style = "width : 60px; length : 60px">
-    {{streamer}}</p>
+  <div style="padding-left:100px; padding-top: 30px">
+    <p style="font-size:1.5em"><img src="{{picture}}" alt = "No Picture" style = "width : 60px; length : 60px">&nbsp&nbsp&nbsp {{streamer}}    
+      <br><br><br>
+    <p style = "font-size: 1em;">Viewers: {{current_viewers}}</p>
   </div>
->>>>>>> 17a3864926b97904b8da1795e206adc3ee343a72
 	</div>
 </body>
 <div id="footer">
