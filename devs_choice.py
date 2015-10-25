@@ -18,14 +18,13 @@ game_details = {'Current Views':data['streams'][0]['viewers'],\
                 'Status':data['streams'][0]['channel']['status']}
 
 @app.route("/")
-def index():
+def details():
     """ Displays the index page accessible at '/'
     """
     return render_template('index.html', streamer = game_details['Display Name'],\
-    						 			 channel = game_details['Display Name'], \
-    						 			 Stream = game_details['Status'], \
-    						 			 picture = game_details['Logo']
-    						 			 current_viewers = game_details['viewers'])
+                                         channel = game_details['Display Name'], \
+                                         Stream = game_details['Status'], \
+                                         picture = game_details['Logo'])
 
 if __name__ == "__main__":
     app.run()
