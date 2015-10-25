@@ -1,0 +1,60 @@
+import requests, json
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+top4_data = requests.get('https://api.twitch.tv/kraken/games/top?limit=4')
+top_data = json.loads(top4_data.text)
+
+games = []
+
+for i in range(4):
+    games.append(top_data['top'][i]['game']['name'])
+
+devs_choice = {'Dark Souls': 'Dark%20Souls'}
+dev_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(devs_choice['Dark Souls'])).text)
+game1_data = requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[0].replace(' ', '%20')))
+game2_data = requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[1].replace(' ', '%20')))
+game3_data = requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[2].replace(' ', '%20')))
+game4_data = requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[3].replace(' ', '%20')))
+#data = json.loads(dev_data.text)
+
+def game_details(data):
+    details = {'Current Views':data['streams'][0]['viewers'],\
+                'Display Name':data['streams'][0]['channel']['display_name'],\
+                'Game Name':data['streams'][0]['channel']['game'],\
+                'Total Views': data['streams'][0]['channel']['views'],\
+                'Followers': data['streams'][0]['channel']['followers'],\
+                'Logo':data['streams'][0]['channel']['logo'],\
+                'Status':data['streams'][0]['channel']['status']}
+    return details
+
+@app.route("/")
+def index():
+    """ Displays the index page accessible at '/'
+    """
+    return render_template('index.html', streamer = game_details(dev_data)['Display Name'],\
+                                         channel = game_details(dev_data)['Display Name'], \
+                                         Stream = game_details(dev_data)['Status'], \
+                                         picture = game_details(dev_data)['Logo'],\
+                                         Game1 = games[0],\
+                                         Game2 = games[1],\
+                                         Game3 = games[2],\
+                                         Game4 = games[3]
+                                         )
+
+def top_pick():
+    """ Displays the index page accessible at '/'
+    """
+    return render_template('top_pick.html', streamer = game_details(dev_data)['Display Name'],\
+                                         channel = game_details(dev_data)['Display Name'], \
+                                         Stream = game_details(dev_data)['Status'], \
+                                         picture = game_details(dev_data)['Logo'],\
+                                         Game1 = games[0],\
+                                         Game2 = games[1],\
+                                         Game3 = games[2],\
+                                         Game4 = games[3]
+                                         )
+
+if __name__ == "__main__":
+    app.run()
