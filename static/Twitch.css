@@ -102,7 +102,9 @@ ul li ul li {
   color: #fff;
   text-shadow: 0 -1px 0 #000;
 }
-ul li ul li:hover { background: #666; }
+ul li ul li:hover { 
+  background: #666;
+}
 ul li:hover ul {
   display: block;
   opacity: 0.98;
