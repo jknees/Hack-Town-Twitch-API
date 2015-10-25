@@ -35,6 +35,7 @@ h1 {
 }
 h2 {
   padding: 30px;
+  font-family: "Arial Black", Gadget, sans-serif;
 }
 #footer {
   position:relative;
@@ -110,8 +111,9 @@ ul li:hover ul {
 }
 #block {
   box-shadow: 16px 16px #262626;
-  opacity: 0.93;
+  opacity: 0.97;
 }
-object {
+#vid {
   opacity: 1;
+  z-index: 1;
 }
