@@ -112,3 +112,6 @@ ul li:hover ul {
   box-shadow: 16px 16px #262626;
   opacity: 0.93;
 }
+object {
+  opacity: 1;
+}
