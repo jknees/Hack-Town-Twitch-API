@@ -1,1 +1,1 @@
-web: gunicorn hackathon:app
+web: gunicorn project.hackathon:app
