@@ -7,17 +7,14 @@ app = Flask(__name__)
 top4_data = requests.get('https://api.twitch.tv/kraken/games/top?limit=4')
 top_data = json.loads(top4_data.text)
 
-games = []
-
-for i in range(4):
-    games.append(top_data['top'][i]['game']['name'])
+games = [top_data['top'][i]['game']['name'] for i in range(len(top_data['top']))]
 
 devs_choice = {'Dark Souls': 'Dark%20Souls'}
 dev_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(devs_choice['Dark Souls'])).text)
-game1_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[0].replace(' ', '%20'))).text)
-game2_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[1].replace(' ', '%20'))).text)
-game3_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[2].replace(' ', '%20'))).text)
-game4_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[3].replace(' ', '%20'))).text)
+game1_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[0])).text)
+game2_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[1])).text)
+game3_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[2])).text)
+game4_data = json.loads(requests.get('https://api.twitch.tv/kraken/streams?game={}&limit=1'.format(games[3])).text)
 
 def game_details(data):
     '''
