@@ -1,1 +1,2 @@
-web: gunicorn project.hackathon:app
+web: gunicorn hackathon:app --preload --workers 1
+
